@@ -1194,7 +1194,7 @@ class BuildVolume(SceneNode):
                         [ 0, -half_machine_depth + border_size]
                     ], numpy.float32)))
             elif self._shape == "tripod":
-
+                """
                 # calculating pod side length (pod is an equilateral triangle)
                 pod =  machine_depth - machine_width
                 hpod = 0.5 * pod
@@ -1237,6 +1237,7 @@ class BuildVolume(SceneNode):
                         [-half_machine_width, -half_machine_depth],
                         [ 0, -half_machine_depth + border_size]
                     ], numpy.float32)))
+                """
             else:
                 if border_size - left_unreachable_border > 0:
                     result[extruder_id].append(Polygon(numpy.array([
