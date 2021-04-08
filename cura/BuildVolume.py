@@ -475,7 +475,7 @@ class BuildVolume(SceneNode):
             h = pod + self._depth
             r = h / 3
             hw = 0.5 * self._width
-            spod = pod * sin(60)
+            spod = pod * math.sin(60)
             h1 = -r + spod
             h2 = h - r - spod
 
