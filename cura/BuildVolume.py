@@ -1214,7 +1214,7 @@ class BuildVolume(SceneNode):
                     [hpod, h2], # bpr
                     [-hpod, h2], # bpl
                     [-hw - hpod, h1] # lpl
-                ])))
+                ], numpy.float32)))
 
                 if border_size > 0:
                     result[extruder_id].append(Polygon(numpy.array([
