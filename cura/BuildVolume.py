@@ -378,6 +378,7 @@ class BuildVolume(SceneNode):
                 mb.setVertexUVCoordinates(n, v[0], v[2] * aspect)
             return mb.build().getTransformed(scale_matrix)
         elif self._shape == "tripod":
+
             # calculating pod side length (pod is an equilateral triangle)
             pod =  self._depth - self._width
             hpod = 0.5 * pod
@@ -438,6 +439,7 @@ class BuildVolume(SceneNode):
             for n in range(0, 6):
                 v = mb.getVertex(n)
                 mb.setVertexUVCoordinates(n, v[0], v[2])
+
             return mb.build()
         else:
             # Build plate grid mesh
@@ -585,6 +587,8 @@ class BuildVolume(SceneNode):
                 Vector(bpl[0], max_h, bpl[1]),
                 color = self._volume_outline_color
             )
+
+            return mb.build()
 
         else:
             # Outline 'cube' of the build volume
@@ -1194,7 +1198,7 @@ class BuildVolume(SceneNode):
                         [ 0, -half_machine_depth + border_size]
                     ], numpy.float32)))
             elif self._shape == "tripod":
-                """
+
                 # calculating pod side length (pod is an equilateral triangle)
                 pod =  machine_depth - machine_width
                 hpod = 0.5 * pod
@@ -1237,7 +1241,7 @@ class BuildVolume(SceneNode):
                         [-half_machine_width, -half_machine_depth],
                         [ 0, -half_machine_depth + border_size]
                     ], numpy.float32)))
-                """
+
             else:
                 if border_size - left_unreachable_border > 0:
                     result[extruder_id].append(Polygon(numpy.array([
