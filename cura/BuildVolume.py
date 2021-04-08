@@ -377,7 +377,7 @@ class BuildVolume(SceneNode):
                 v = mb.getVertex(n)
                 mb.setVertexUVCoordinates(n, v[0], v[2] * aspect)
             return mb.build().getTransformed(scale_matrix)
-        elif self._shape == "tripod"
+        elif self._shape == "tripod":
             # calculating pod side length (pod is an equilateral triangle)
             pod =  self._depth - self._width
             hpod = 0.5 * pod
