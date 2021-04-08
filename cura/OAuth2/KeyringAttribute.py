@@ -23,6 +23,8 @@ if Platform.isWindows() and hasattr(sys, "frozen"):
 DONT_EVER_STORE_LOCALLY = ["refresh_token"]
 
 class KeyringAttribute:
+    self._store_secure = False
+
     """
     Descriptor for attributes that need to be stored in the keyring. With Fallback behaviour to the preference cfg file
     """
